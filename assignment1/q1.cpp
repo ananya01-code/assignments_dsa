@@ -103,37 +103,24 @@ void linearSearch() {
     cout << "Element not found.\n";
 }
 
-void pause() {
-    cout << "Press Enter to continue...";
-    cin.ignore();
-    cin.get();
-}
-
 int main() {
     int choice;
+    
 
     do {
-        cout << "\n——MENU——-\n";
+        cout << "\n--- MENU ---\n";
         cout << "1. CREATE\n2. DISPLAY\n3. INSERT\n4. DELETE\n5. LINEAR SEARCH\n6. EXIT\n";
         cout << "Enter your choice: ";
-
-        if (!(cin >> choice)) {
-            cout << "Invalid input! Please enter a number.\n";
-            cin.clear();
-            cin.ignore(10000, '\n');
-            continue;
-        }
-
-        cin.ignore(); // clear newline
+        cin >> choice;
 
         switch (choice) {
-            case 1: create(); pause(); break;
-            case 2: display(); pause(); break;
-            case 3: insert(); pause(); break;
-            case 4: deleteElement(); pause(); break;
-            case 5: linearSearch(); pause(); break;
+            case 1: create(); break;
+            case 2: display(); break;
+            case 3: insert(); break;
+            case 4: deleteElement(); break;
+            case 5: linearSearch(); break;
             case 6: cout << "Exiting program.\n"; break;
-            default: cout << "Invalid choice! Try again.\n"; pause();
+            default: cout << "Invalid choice! Try again.\n";
         }
     } while (choice != 6);
 
